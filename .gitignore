@@ -57,3 +57,6 @@ typings/
 # dotenv environment variables file
 .env
 
+# App
+app/cookies
+app/userconfig.json
