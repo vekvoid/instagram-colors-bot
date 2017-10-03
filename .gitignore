@@ -59,4 +59,5 @@ typings/
 
 # App
 app/cookies
+app/images
 app/userconfig.json
