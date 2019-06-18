@@ -16,7 +16,7 @@ ig.state.generateDevice(config.igUsername);
 
 	ig.publish.photo({
 		file: image,
-		caption: '#color',
+		caption: '#color #colorscheme #picoftheday #instadaily',
 	}).then((result) => {
 		console.log(result.status, `https://www.instagram.com/p/${result.media.code}`);
 	}).catch(error => {
