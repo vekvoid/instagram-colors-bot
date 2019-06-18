@@ -1,18 +1,26 @@
-const Client = require('instagram-private-api').V1;
-const userConfig = require('./userconfig.json');
-const device = new Client.Device(userConfig.username);
-const storage = new Client.CookieFileStorage(__dirname + '/cookies/' + userConfig.username + '.json');
+const { IgApiClient } = require('instagram-private-api');
+const fs = require('fs');
+const imageCreator = require('./image-creator');
+const config = require('./config');
 
-Client.Session.create(device, storage, userConfig.username, userConfig.password)
-  .then(uploadImage(session, './app/images/testcolor.jpg'));
+const ig = new IgApiClient();
+ig.state.generateDevice(config.igUsername);
 
-var uploadImage = (session, file) => {
-  Client.Upload.photo(session, file)
-	  .then(function(upload) {
-	    console.log(upload.params.uploadId);
-	    return Client.Media.configurePhoto(session, upload.params.uploadId, '#color');
-	  })
-	  .then(function(medium) {
-	    console.log(medium.params);
-	  });
-};
+(async () => {
+	await ig.simulate.preLoginFlow();
+	await ig.account.login(config.igUsername, config.igPassword);
+	await ig.simulate.postLoginFlow().catch(error => console.log(error.message,'postloginflow'));
+
+
+	const imagePath = await imageCreator.create();
+	const image = fs.readFileSync(imagePath);
+
+	ig.publish.photo({
+		file: image,
+		caption: '#color',
+	}).then((result) => {
+		console.log(result, 'result');
+	}).catch(error => {
+		console.log(error.message)
+	});
+})();

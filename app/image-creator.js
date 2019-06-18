@@ -26,12 +26,14 @@ imageCreator.create = (props) => {
   return new Promise(function(resolve, reject) {
     props = setProps(props);
 
+    const imagePath = props.path + props.name + '.jpg';
+
     gm(props.w, props.h, props.color)
-      .write(props.path + props.name + ".jpg", function (err) {
+      .write(imagePath, function (err) {
         if (err) {
           reject(err);
         } else {
-          resolve(true);
+          resolve(imagePath);
         }
       });
   });

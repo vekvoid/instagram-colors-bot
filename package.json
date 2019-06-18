@@ -5,17 +5,18 @@
   "main": "app/main.js",
   "scripts": {
     "start": "node app/main.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "gm": "^1.23.0",
-    "instagram-private-api": "^0.6.7",
-    "shortid": "^2.2.8"
+    "dotenv": "^8.0.0",
+    "gm": "^1.23.1",
+    "instagram-private-api": "^1.14.0",
+    "shortid": "^2.2.14"
   },
   "devDependencies": {
-    "chai": "^4.1.2",
-    "mocha": "^3.5.3"
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
   }
 }
