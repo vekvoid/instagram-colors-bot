@@ -3,10 +3,10 @@ const chai = require('chai'),
       ImageCreator = require('./../app/image-creator');
 
 describe('ImageCreator', () => {
-  it('create() should return true', (done) => {
+  it('create() should return a string', (done) => {
     ImageCreator.create()
     .then( (result) => {
-      expect(result).to.be.true;
+      expect(result).to.be.string;
     }).then(done, done);
   });
   

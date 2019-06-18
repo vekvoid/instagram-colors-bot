@@ -1,4 +1,4 @@
-const gm = require('gm');
+const gm = require('gm').subClass({ imageMagick: true });
 const randomColor = require('./random-color');
 const imageCreator = {};
 
