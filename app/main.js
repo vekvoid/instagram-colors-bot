@@ -19,7 +19,7 @@ ig.state.generateDevice(config.igUsername);
 		file: image,
 		caption: '#color',
 	}).then((result) => {
-		console.log(result, 'result');
+		console.log(result.status, `https://www.instagram.com/p/${result.media.code}`);
 	}).catch(error => {
 		console.log(error.message)
 	});

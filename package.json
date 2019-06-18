@@ -5,7 +5,8 @@
   "main": "app/main.js",
   "scripts": {
     "start": "node app/main.js",
-    "test": "mocha"
+    "test": "mocha",
+    "dummy": "node -e 'console.log(`dummy script`);'"
   },
   "author": "",
   "license": "ISC",
