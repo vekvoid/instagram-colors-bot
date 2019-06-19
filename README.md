@@ -6,4 +6,5 @@ Post a random plain color image on Instagram.
 - [ ] Code refactor
 - [ ] Use eslint
 - [ ] Store IG coockie session
-- [ ] Get color name
+- [x] Get color name
+- [ ] More elaborated post caption
