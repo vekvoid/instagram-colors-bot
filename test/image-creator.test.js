@@ -1,10 +1,10 @@
 const chai = require('chai'),
       expect = chai.expect,
-      ImageCreator = require('./../app/image-creator');
+      imageCreator = require('../app/image-creator');
 
-describe('ImageCreator', () => {
+describe('imageCreator', () => {
   it('create() should return a string', (done) => {
-    ImageCreator.create()
+    imageCreator.create()
     .then( (result) => {
       expect(result).to.not.be.undefined;
       expect(result).to.have.property('fullPath');

@@ -61,3 +61,6 @@ typings/
 app/cookies
 app/images
 app/userconfig.json
+
+session.json
+sessionToTest.json

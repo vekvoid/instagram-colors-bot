@@ -1,20 +1,14 @@
-const { IgApiClient } = require('instagram-private-api');
 const fs = require('fs');
 const imageCreator = require('./image-creator');
-const config = require('./config');
-
-const ig = new IgApiClient();
-ig.state.generateDevice(config.igUsername);
+const instagramService = require('./instagram/instagram.service');
 
 (async () => {
-	await ig.simulate.preLoginFlow();
-	await ig.account.login(config.igUsername, config.igPassword);
-	await ig.simulate.postLoginFlow().catch(error => console.log(error.message,'postloginflow'));
+	await instagramService.login();
 
 	const imageInfo = await imageCreator.create();
 	const imageFile = fs.readFileSync(imageInfo.fullPath);
 
-	ig.publish.photo({
+	instagramService.client.publish.photo({
 		file: imageFile,
 		caption: `${imageInfo.colorName}\n#color #colorscheme #picoftheday #instadaily`,
 	}).then((result) => {
