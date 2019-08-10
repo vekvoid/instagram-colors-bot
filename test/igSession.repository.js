@@ -1,5 +1,4 @@
 const { expect } = require('chai');
-const sinon = require('sinon');
 const fs = require('fs');
 const path = require('path');
 const repository = require('../app/instagram/igSession.repository');
