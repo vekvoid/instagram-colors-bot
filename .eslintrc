@@ -1,10 +1,18 @@
 {
+  "env": {
+    "mocha": true
+  },
   "extends": [
     "airbnb-base"
+  ],
+  "plugins": [
+    "chai-friendly"
   ],
   "parserOptions": {
     "ecmaVersion": 2019
   },
   "rules": {
+    "no-unused-expressions": 0,
+    "chai-friendly/no-unused-expressions": 2
   }
 }
