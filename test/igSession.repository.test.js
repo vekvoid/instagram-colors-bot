@@ -5,7 +5,7 @@ const repository = require('../app/instagram/igSession.repository');
 const config = require('../app/config');
 
 describe('igSession.repository', () => {
-  const actualConfig = {...config};
+  const actualConfig = { ...config };
   const fakeSesionPath = path.resolve(__dirname, '../app/instagram/sessionToTest.json');
 
   before(() => {
@@ -27,17 +27,17 @@ describe('igSession.repository', () => {
         uuid: 'uuid',
         phoneId: 'phoneId',
         adid: 'adid',
-        build: 'BUILD'
+        build: 'BUILD',
       };
 
       repository.saveSession(cookies, state);
 
       const fileExist = () => fs.readFileSync(fakeSesionPath);
-      
+
       expect(fileExist()).to.not.throw;
     });
   });
-    
+
   describe('getSession()', () => {
     it('should get the stored the session', () => {
       const cookies = '{"key":"value", cookies: []}';
@@ -48,7 +48,7 @@ describe('igSession.repository', () => {
         uuid: 'uuid',
         phoneId: 'phoneId',
         adid: 'adid',
-        build: 'BUILD'
+        build: 'BUILD',
       };
 
       repository.saveSession(cookies, state);

@@ -30,6 +30,7 @@ Sample Usage:
 
 */
 
+/* eslint-disable */
 var ntc = {
 
   init: function() {
