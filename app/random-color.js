@@ -1,3 +1,12 @@
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function rgbToHex(r, g, b) {
+  return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`; // eslint-disable-line no-bitwise
+}
+
 const randomColor = () => {
   const newColor = {};
   let newHexColor = '#FFFFFF';
@@ -10,13 +19,5 @@ const randomColor = () => {
 
   return newHexColor;
 };
-
-function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-function rgbToHex(r, g, b) {
-  return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
-}
 
 module.exports = randomColor;

@@ -1,4 +1,4 @@
-const {expect} = require('chai');
+const { expect } = require('chai');
 const instagramService = require('../app/instagram/instagram.service');
 
 describe('instagram.service', () => {
