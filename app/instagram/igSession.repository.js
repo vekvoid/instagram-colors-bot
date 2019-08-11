@@ -1,5 +1,6 @@
 const fs = require('fs');
 const config = require('../config');
+const logger = require('../utils/logger');
 
 const sessionObject = (cookies, state) => ({
   cookies: JSON.stringify(cookies),
@@ -13,11 +14,11 @@ const saveSession = (cookies, state) => {
 };
 
 const getSession = () => {
-  // let session;
   try {
     const sesion = fs.readFileSync(config.sessionPath).toString();
     return JSON.parse(sesion);
-  } catch {
+  } catch (error) {
+    logger.debug(error);
     return undefined;
   }
 };
