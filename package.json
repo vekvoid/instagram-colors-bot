@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node app/main.js",
     "test": "mocha --timeout 25000",
-    "dummy": "node -e 'console.log(`dummy script`);'"
+    "dummy": "node -e 'console.log(`dummy script`);'",
+    "eslint": "eslint ./",
+    "eslint:fix": "eslint --fix ./"
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +21,10 @@
   "devDependencies": {
     "bluebird": "^3.5.5",
     "chai": "^4.2.0",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "install": "^0.13.0",
     "mocha": "^6.1.4"
   }
 }

@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "airbnb-base"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2019
+  },
+  "rules": {
+  }
+}
