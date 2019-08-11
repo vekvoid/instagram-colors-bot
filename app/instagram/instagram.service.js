@@ -57,7 +57,7 @@ const login = async () => {
     restoreSession(session);
   }
 
-  if (isConnected()) {
+  if (await isConnected()) {
     return true;
   }
   logger.info('Error: not a valid session');
