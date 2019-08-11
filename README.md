@@ -10,3 +10,4 @@ Post a random plain color image on Instagram.
 - [x] Store IG coockie session
 - [x] Get color name
 - [ ] More elaborated post caption
+- [ ] Run tests before commit 
