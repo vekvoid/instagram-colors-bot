@@ -2,6 +2,7 @@
 Post a random plain color image on Instagram.
 
 ## TO-DO 
+- [ ] Use redis to store sessions
 - [ ] Complete instagram login challenge
 - [ ] Notify when the process goes wrong
 - [ ] Upload on a random hour
