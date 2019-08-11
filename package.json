@@ -13,13 +13,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bluebird": "^3.5.5",
     "dotenv": "^8.0.0",
     "gm": "^1.23.1",
     "instagram-private-api": "^1.14.0",
+    "pino": "^5.13.2",
     "shortid": "^2.2.14"
   },
   "devDependencies": {
-    "bluebird": "^3.5.5",
     "chai": "^4.2.0",
     "eslint": "^6.1.0",
     "eslint-config-airbnb-base": "^14.0.0",
