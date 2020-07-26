@@ -13,7 +13,7 @@ const instagramService = require('./instagram/instagram.service');
 
   instagramService.client.publish.photo({
     file: imageFile,
-    caption: `${imageInfo.colorName} - ${imageInfo.color}\n#color #colorscheme #picoftheday #instadaily`,
+    caption: `${imageInfo.colorName} - ${imageInfo.color} (noise: ${imageInfo.noise}%)\n#color #colorscheme #picoftheday #instadaily`,
   }).then((result) => {
     logger.info(result.status, `https://www.instagram.com/p/${result.media.code}`);
   }).catch((error) => {
