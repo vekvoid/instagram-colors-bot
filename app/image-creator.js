@@ -1,4 +1,5 @@
-const gm = require('gm');
+const gm = require('gm').subClass({ imageMagick: true });
+const path = require('path');
 const randomColor = require('./random-color');
 const getColorName = require('./color-name');
 
@@ -34,7 +35,19 @@ imageCreator.create = (props) => new Promise(((resolve, reject) => {
   imageProps.fullPath = `${imageProps.path + imageProps.name}.jpg`;
   imageProps.colorName = colorName(imageProps.color) || '';
 
-  gm(imageProps.width, imageProps.height, imageProps.color).noise('laplacian').fill(`${imageProps.color}${noisePercentHEXFix(imageProps.noise)}`).drawRectangle(0, 0, imageProps.width, imageProps.height)
+  const font = path.resolve(__dirname, './fonts', 'Montserrat-Thin.ttf');
+
+  gm(imageProps.width, imageProps.height, imageProps.color).noise('laplacian').fill(`${imageProps.color}${noisePercentHEXFix(imageProps.noise)}`)
+    .drawRectangle(0, 0, imageProps.width, imageProps.height)
+    .region(imageProps.width, imageProps.height, 0, 0)
+    .gravity('Center')
+    .stroke('#00000000')
+    .fill('#0000007A')
+    .fontSize(80)
+    .font(font)
+    .out('-background', '#ffffff00')
+    .out('-size', `${imageProps.width - 50}x`, `caption: ${imageProps.colorName}`)
+    .out('-composite')
     .write(imageProps.fullPath, (err) => {
       if (err) {
         reject(err);
