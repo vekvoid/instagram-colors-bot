@@ -22,7 +22,7 @@
     "color-name-list": "^4.11.0",
     "dotenv": "^8.2.0",
     "gm": "^1.23.1",
-    "instagram-private-api": "^1.39.0",
+    "instagram-private-api": "^1.43.3",
     "nearest-color": "^0.4.4",
     "pino": "^5.16.0",
     "shortid": "^2.2.15"

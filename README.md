@@ -15,5 +15,5 @@ Post a random plain color image on Instagram.
 
 
 ## Requirements
-- [Node.js](https://nodejs.org/)
+- [Node.js v15](https://nodejs.org/)
 - [GraphicsMagick](http://www.graphicsmagick.org/download.html)
