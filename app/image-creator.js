@@ -21,7 +21,8 @@ const validatedProps = (props = {}) => {
 const colorName = (color) => getColorName.from(color);
 
 const noisePercentHEXFix = (percent) => {
-  const decimalValue = Math.round((percent * 255) / 100);
+  const noiceOpacityPercent = 100 - percent;
+  const decimalValue = Math.round((noiceOpacityPercent * 255) / 100);
 
   if (percent < 7) {
     return `0${decimalValue.toString(16).toUpperCase()}`;
